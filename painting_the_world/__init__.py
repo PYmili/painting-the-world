@@ -1,0 +1,1 @@
+from .painting import Painting
