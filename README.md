@@ -1,5 +1,7 @@
 # Painting-the-World: Minecraft 像素图片生成器
 
+![demo2](demo_img/demo2.png)
+
 ## 简介
 
 `Painting-the-World` 是一款我的世界小工具，旨在将数字化的图片转化为《我的世界》游戏内的像素艺术作品。利用RCON（Remote Console）协议，本项目能够直接与《我的世界》服务器通信，按照用户提供的图像数据，在游戏世界中精准地放置方块，复现图像细节。无论是个人艺术创作、地图美化还是游戏内广告牌设计，`Painting-the-World` 都能为《我的世界》玩家和创作者带来全新的可能性。
@@ -45,6 +47,10 @@ python command.py -h
 - `-g, --generate`：执行生成操作。在提供了所有必要参数后，使用此选项来触发图片到游戏世界的转换过程。
 
 - `-rm RESIZE_MULTIPLE, --resize-multiple RESIZE_MULTIPLE`：允许调整图片缩放比例。这对于适应不同的建筑规模或优化构建时间非常有帮助。
+  
+- `-cb {wool,concrete}, --color-blocks {wool,concrete}`：可以通过设置像素画主要填充方块，wool羊毛，concrete混凝土
+  
+- `-iv VERTICAL, --vertical VERTICAL`：是否将图片垂直生成(Fasle, True)
 
 #### 示例用法
 
@@ -54,13 +60,6 @@ python command.py -h
 python command.py -f ./test.jpg -x 100 -y 64 -z 100 -c hsv -g
 ```
 
-### 效果预览
-
-为了直观展示`Painting-the-World`的工作效果，附上了两个示例图片：
-
-- `test.jpg`：原始上传的图片文件。
-- `result_test.png`：由`Painting-the-World`转化后的游戏内像素艺术截图。
-
 通过对比这两个文件，你可以清晰地看到图片如何被转化成《我的世界》中的方块结构，体验这一工具的魅力所在。
 
 ---
@@ -69,7 +68,7 @@ python command.py -f ./test.jpg -x 100 -y 64 -z 100 -c hsv -g
 
 ## 技术细节
 
-- **开发语言**：本项目采用Java/Python（根据实际选用）开发，确保高效稳定。
+- **开发语言**：本项目采用Python开发，确保稳定。
 - **依赖库**：利用了Minecraft-RCON库进行服务器通信，以及PIL（Python Imaging Library）或其他图像处理库处理图像数据。
 
 ## 贡献与支持
@@ -78,8 +77,20 @@ python command.py -f ./test.jpg -x 100 -y 64 -z 100 -c hsv -g
 
 ---
 
-<div style="text-align:center">
-    <img src="./test.jpg" alt="Test Image" width="260" height="368">
-</div>
+## 效果预览
 
-![result_test.png](./result_test.png)
+以下是直接引用的图片示例，以便更直观地展示转换效果：
+
+- **原始图片**: ![test.jpg](./test.jpg)
+- **转换后的像素艺术**: ![result_test.png](./result_test.png)
+
+通过对比原始图片与转换后的像素艺术，您可以领略到`Painting-the-World`工具的强大功能及其在《我的世界》游戏中的应用效果。
+
+---
+
+## 附加演示
+
+此外，为了进一步展示项目能力，还提供了额外的演示图片：
+
+- ![demo1](demo_img/demo1.png)
+- ![demo2](demo_img/demo2.png)

@@ -13,7 +13,9 @@ def main():
     parser.add_argument('--no-save', action='store_false', dest='is_save', help='Disable saving the generated painting')
     parser.add_argument('-d', '--delete-generated', action='store_true', help='Delete the generated painting')
     parser.add_argument('-g', '--generate', action='store_true', help='Generate a painting')
-    parser.add_argument('-rm', '--resize-multiple', type=int, help='Resize multiple for image processing')
+    parser.add_argument('-rm', '--resize-multiple', type=int, default=8, help='Resize multiple for image processing')
+    parser.add_argument('-cb', '--color-blocks', choices=['wool', 'concrete'], default='concrete', help='Select filled blocks')
+    parser.add_argument('-iv', '--vertical', type=bool, default=False, help="Vertical generation")
 
     args = parser.parse_args()
 
@@ -29,7 +31,8 @@ def main():
         client.set(
             args.file_path,
             args.base_x, args.base_y, args.base_z,
-            args.color_space, args.is_save, args.resize_multiple
+            args.color_space, args.is_save, args.resize_multiple,
+            args.color_blocks, args.vertical
         )
         if args.generate:
             client.generate()    
